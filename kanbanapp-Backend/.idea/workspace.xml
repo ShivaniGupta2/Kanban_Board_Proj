@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d9d5878-9fc3-444c-9295-52549effff9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EurekaServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EurekaServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ColumnAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ColumnAlreadyExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ColumnNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ColumnNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/MemberAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/MemberAlreadyExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ProjectAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ProjectAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ProjectNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/ProjectNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/TaskAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/TaskAlreadyExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/TaskNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/KanbanMongoService/src/main/java/com/example/KanbanMongoService/exception/TaskNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/src/main/java/com/example/api_gateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/src/main/java/com/example/api_gateway/ApiGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kanbanRegisterService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/kanbanRegisterService/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kanbanRegisterService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kanbanRegisterService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/RabbitMQ/domain/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/RabbitMQ/domain/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/config/MessageConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/config/MessageConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/config/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/config/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/service/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kanbanRegisterService/src/main/java/com/niit/kanbanRegisterService/service/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userauthenticationservice/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/userauthenticationservice/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userauthenticationservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userauthenticationservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userauthenticationservice/src/main/java/com/example/RabbiitMQ/domain/UsersDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/userauthenticationservice/src/main/java/com/example/RabbiitMQ/domain/UsersDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userauthenticationservice/src/test/java/com/example/userauthenticationservice/UserAuthenticationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/userauthenticationservice/src/test/java/com/example/userauthenticationservice/UserAuthenticationServiceApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2IClRdKY3ZpDj0QTRubYVunVAGf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Backend_(12-8-22)/KANBAN_BOARD_PROJECT/KanbanBoard-Backend"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.UserAuthenticationServiceApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.api_gateway.ApiGatewayApplication" />
+      <module name="api_gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.api_gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.EurekaServer.EurekaServerApplication" />
+      <module name="EurekaServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.EurekaServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KanbanMongoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.KanbanMongoService.KanbanMongoServiceApplication" />
+      <module name="KanbanMongoService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.KanbanMongoService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KanbanRegisterServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.niit.kanbanRegisterService.KanbanRegisterServiceApplication" />
+      <module name="kanbanRegisterService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.kanbanRegisterService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.userauthenticationservice.UserAuthenticationServiceApplication" />
+      <module name="userauthenticationservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.userauthenticationservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserAuthenticationServiceApplication" />
+        <item itemvalue="Application.KanbanRegisterServiceApplication" />
+        <item itemvalue="Application.KanbanMongoServiceApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d9d5878-9fc3-444c-9295-52549effff9a" name="Changes" comment="" />
+      <created>1669693443451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669693443451</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

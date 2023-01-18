@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: kanban-register-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/KanbanDb
+
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    host: smtp.gmail.com
+    username: notificationkanbanapp@gmail.com
+    password: bkzaqgxbvzhozrll
+    port: '587'

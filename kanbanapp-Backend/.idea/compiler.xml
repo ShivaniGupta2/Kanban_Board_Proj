@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EurekaServer" />
+        <module name="userauthenticationservice" />
+        <module name="KanbanMongoService" />
+        <module name="api_gateway" />
+        <module name="kanbanRegisterService" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EurekaServer" options="-parameters" />
+      <module name="KanbanMongoService" options="-parameters" />
+      <module name="api_gateway" options="-parameters" />
+      <module name="kanbanRegisterService" options="-parameters" />
+      <module name="userauthenticationservice" options="-parameters" />
+    </option>
+  </component>
+</project>
