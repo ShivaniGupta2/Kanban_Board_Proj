@@ -1,0 +1,33 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+.body{
+  background: #3498DB;
+  height: 100%;
+  color: #fff;
+  
+  font-size: 16px;
+}
+h1{
+   padding-top: 200px;
+  font-size: 45vh;
+ 
+}
+h2{
+    margin-top: 200px;
+    font-family: 'Montserrat', sans-serif;
+}
+h2 span{
+  font-size: 4rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+a:link, a:visited{
+  text-decoration: none;
+  color: #fff;
+}
+h3 a:hover{
+  text-decoration: none;
+  background: #fff;
+  color: #3498DB;
+  cursor: pointer;
+}

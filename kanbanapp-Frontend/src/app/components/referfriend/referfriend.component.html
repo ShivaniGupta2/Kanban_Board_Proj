@@ -1,0 +1,71 @@
+<div>
+    <div class="row" style="background-color: #6bb561;">
+        <div class="col">
+            <img class="headerimg" src=".\assets\refer-a-friend-website_thumbnail.png" alt="image">
+        </div>
+        <div class="col" style="color: #e8e8e8">
+            <h1 class="headerh1">Refer - A - Friend</h1>
+            <h1 class="headerh2">Contest</h1>
+            <p class="headerp">The more you share, the more chances you <br> have to win!</p>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="secondrow">how to enter</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="thirdrowimg" src=".\assets\inviteFriend1.png" alt="img">
+                <p class="thirdrowp">Fill out the form below</p>
+            </div>
+            <div class="col-md-4">
+                <img class="thirdrowimg" src=".\assets\inviteFriend2.png" alt="img">
+                <p class="thirdrowp">We will send a referal link to<br> your friends</p>
+            </div>
+            <div class="col-md-4">
+                <img class="thirdrowimg" src=".\assets\inviteFriend3png.png" alt="img">
+                <p class="thirdrowp">Share your link via social networks <br> email or text</p>
+            </div>
+        </div>
+    </div><br><br>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <form [formGroup]="inviteForm" class="col-md-6">
+            <label class="formlabel" style="margin-top: 30px;">Enter your Name</label>
+            <input type="text" class="form-control" placeholder="Your Name" formControlName="yourname">
+            <div style=" margin-left: 10%;"
+                *ngIf="f['yourname']?.invalid && (f['yourname']?.dirty || f['yourname']?.touched)">
+                <div *ngIf="f['yourname']?.getError?.('required')" style="color: red;">
+                    *Your Name is required
+                </div>
+                <div *ngIf="f['yourname']?.getError?.('pattern')" style="color: red;">
+                    <p> *should contains minimum 2 letters and maximum 29 letters</p>
+                </div>
+            </div><br>
+            <label class="formlabel">Your Friend's EmailId</label>
+            <input type="text" class="form-control" placeholder="Enter your friend's email id"
+                formControlName="friendsEmailid"><br>
+            <div style=" margin-left: 10%;" *ngIf="f['friendsEmailid']?.invalid && (f['friendsEmailid']?.dirty || f['friendsEmailid']?.touched)">
+                <div *ngIf="f['friendsEmailid']?.getError?.('required')" style="color: red;">
+                    *Email is required!
+                </div>
+                <div *ngIf="f['friendsEmailid']?.getError?.('pattern')" style="color: red;">
+                    <p> *Invalid email</p>
+                </div>
+            </div><br>
+
+            <div class="form-check" style="text-align: center;">
+                <input style="position: relative;right:-240px;width: 2%;" class="form-check-input" type="checkbox"
+                    value="" />
+                <label class="form-check-label" style="color: #918f8f;">I have read and agree to the rules below</label>
+            </div><br>
+            <button style="margin-bottom: 30px; margin-left: 24%" class="btn submitbtn" (click)="sendEmail()">Submit</button>
+        </form>
+    </div><br><br><br>
+    <div class="row footer">
+        <h1 class="footerh1">share this context with friends</h1>
+
+        <p class="footerp">&copy; Copyright 2022 KabanBoardApp</p>
+    </div>
+
+</div>

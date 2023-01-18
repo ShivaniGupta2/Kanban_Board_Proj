@@ -1,0 +1,507 @@
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport mode="push">
+    <mat-toolbar style="font-family:Comic Sans MS;">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">
+        <mat-icon class="ms-2 me-2" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+        Home
+      </a>
+      <a mat-list-item (click)="openNewProjectFormDialog(newProjectTemplate)">
+        <mat-icon class="ms-2 me-2">playlist_add</mat-icon>Create Board
+      </a>
+      <div class="dropdownproject">
+        <button class="btn btn-light dropdown-toggle" style="width: 100%;" type="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <mat-icon style="margin-left: -45px; margin-right:20px">dashboard</mat-icon>Boards
+        </button>
+        <div class="dropdown-menu projectoptions " style="width: 100%;" (change)="update($event)"
+          aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item " style="text-transform: capitalize;" (click)="getBoard(project)"
+            (click)="enableAddColumnBtn()" (click)="disableFrontpage()" (click)="drawer.toggle()"
+            (click)="setCurrentProject(project)" *ngFor="let project of projectsName">> {{project}} 
+          </a>
+        </div>
+      </div>
+      <a mat-list-item (click)="logout()" style="position: absolute;bottom:10px;">
+        <mat-icon class="ms-2 me-2">logout</mat-icon>Logout
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content [ngStyle]="{'background-color': selectBgcolor.color}">
+    <mat-toolbar style="background-color: rgb(48, 124, 188);color: white;">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <h1 style="margin-left: 15px;font-weight: bolder;font-size: 30px;font-family:Comic Sans MS;">Kanban</h1>
+
+      <div class="d-flex ms-auto order-5">
+
+
+
+        <!-- Board Info Icon -->
+        <button class="me-4" mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Board Info"
+          matTooltipPosition="above" *ngIf="disableAddColumnBtn">
+          <mat-icon style="transform: scale(1.5);">toc</mat-icon>
+        </button>
+        
+        <mat-menu #menu="matMenu" class="my-class">
+          <div class="myclass">
+            <h1 mat-menu-item style="background-color: #f1f1f1;font-size:28px;
+          padding-top:7px;font-family:Comic Sans MS;margin-top:-2px">Board Info</h1>
+          <button mat-menu-item>
+            <span style="text-transform: capitalize;font-size: 15px;"><span
+                style="font-weight: bold;">BoardName:-</span> {{boardname}} </span>
+          </button>
+          <button mat-menu-item>
+            <span style="text-transform: capitalize;font-size: 15px;"><span style="font-weight: bold;">Author:-</span>
+              {{currentauthorname}}</span>
+          </button>
+          <label style="font-weight: bold;margin-left: 16px;font-size: 15px;margin-bottom: 10px;" (click)="$event.stopPropagation()">
+            <button mat-icon-button [matMenuTriggerFor]="menu3">
+              <mat-icon>person_add</mat-icon>
+            </button>
+            <mat-menu #menu3="matMenu">
+              <button mat-menu-item *ngFor="let memberemailid of user" (click)="addMember(memberemailid)" 
+               (click)="$event.stopPropagation()">
+                <mat-icon>person</mat-icon>
+                <span>{{memberemailid}}</span>
+             </button>
+           </mat-menu>Members:-</label>
+            <span *ngFor="let email of memberemail" (click)="$event.stopPropagation()">
+              <p style="margin-left: 30px;font-size: 15px;"><mat-icon (click)="removeMember(email)" style="transform: scale(0.8);" >delete_outline</mat-icon> {{email}}</p>
+            </span>
+          <button mat-menu-item (click)="deleteProject()">
+            <mat-icon >delete</mat-icon> 
+            <span>Delete Board</span>
+          </button>
+          </div>
+        </mat-menu>
+
+
+
+
+        <!-- Account Option -->
+        <button mat-icon-button [matMenuTriggerFor]="menu2" matTooltip="Account" matTooltipPosition="below">
+          <mat-icon style="transform: scale(1.5);" (click)="userData()">person</mat-icon>
+        </button>
+        <mat-menu #menu2="matMenu">
+          <button mat-menu-item style="font-size: 20px;text-transform: capitalize;">
+            <span>Hey! {{userEmpname.empname}}</span>
+            <span style="color: rgba(240,197,13,255);position: relative;left:10px;bottom:-4px"
+              class="material-icons">waving_hand</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>person_ouline</mat-icon>
+            <span>{{username}}</span>
+          </button>
+          <button mat-menu-item routerLink="/invitefriend">
+            <mat-icon>send</mat-icon>
+            <span>Invite a friend</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+
+
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+
+
+
+
+
+
+    <div *ngIf="frontpage">
+      <div class="fplayout row">
+        <div class="col" style="margin-left: 250px;"><img style="height: 90%" src=".\assets\fpimg.jpg.png" alt="fpimg">
+        </div>
+        <div class="col" style="color: rgba(255,252,249,255);margin-top: 40px;">
+          <h1 style="font-weight: bolder;font-size: 50px;font-family: Arial, Helvetica, sans-serif;">Welcome To <br><br>
+            Kanban Board</h1><br><br>
+          <p class="fpPara">Kanban Board is a tool for workflow visualization,</p>
+          <p class="fpPara">designed to help you bring clearity to your work process </p>
+          <p class="fpPara">and enhance efficiency by limiting work in progress.</p><br><br>
+          <p class="fpPara">With this new level of transparency, you will quickly</p>
+          <p class="fpPara">identify problematic work stages, and by improving those,</p>
+          <p class="fpPara">your team will soon work more efficiently.</p><br><br>
+          <p class="fpPara">Please Select or Create Board, And Start Working....</p><br><br>
+          <button class="btn btn-light  fpbtn" (click)="drawer.toggle()">Explore</button>
+        </div>
+      </div>
+      <div class="fplayout2" style=" background-color:rgba(240,197,13,255); height: 90px;margin-bottom: -20px;">
+        <span>
+          <span class="material-icons mailicons">mail</span><span class="mailtext">notificationkanbanapp@gmail.com</span>
+        </span>
+        <span>
+          <span class="material-icons fbicons">facebook</span><span class="fbtext">Facebook</span>
+        </span>
+        <span>
+          <span class="material-icons yticons">video_settings</span><span class="yttext">Youtube</span>
+        </span>
+        <span class="copyrightcls">&copy; 2011-2022 CodeKick AB. All rights reserved. | Terms of Service | Privacy
+          Policy</span>
+      </div>
+    </div>
+
+
+
+    <div class="aligningColumn" cdkDropListGroup>
+
+      <div cdkDropList [cdkDropListData]="col.tasksList" (cdkDropListDropped)="onTaskDrop($event, col.colName)"
+        id="column" *ngFor="let col of project.columnList" class="columndisplay"
+        [ngStyle]="{'background-color': bgColumnColor}">
+        <h1>{{col.colName}}
+          <button style="float: right;position: relative; bottom: 6px;" mat-icon-button matTooltip="More"
+            matTooltipPosition="above" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openNewTaskFormDialogue(newTaskTemplate)" (click)="getCol(col.colName)">
+              <mat-icon>add</mat-icon><span>Add Task</span>
+            </button>
+            <button mat-menu-item (click)="getCol(col.colName)" (click)="deleteColumn()">
+              <mat-icon>delete</mat-icon><span>Delete Column</span>
+            </button>
+            <button mat-menu-item (click)="changeColumnColor()" (click)="$event.stopPropagation()">
+              <mat-icon>autorenew</mat-icon><span>Change Color</span>
+            </button>
+          </mat-menu>
+        </h1>
+
+        <div *ngFor="let t of col.tasksList, let i = index" [attr.data-index]="i" class="col tasklist">
+
+          <div cdkDrag (mousedown)="prevCol(col.colName, t)" class="card" style="width: 18rem;">
+
+            <div class="card-body" (click)="showTaskBody(t)">
+              <span style="float: right;position: absolute; top: 0; right: 25px;" mat-icon-button matTooltip="Edit Task"
+                matTooltipPosition="above" (click)="getCol(col.colName)"
+                (click)="openUpdateTaskFormDialogue(updateTaskTemplate)">
+                <mat-icon style="transform: scale(0.8);">create</mat-icon>
+              </span>
+              <span style="float: right;position: absolute; top: 0; right: 0;" (click)="deleteTask(t,col.colName)"
+                mat-icon-button matTooltip="Delete Task" matTooltipPosition="above">
+                <mat-icon style="transform: scale(0.8);">delete</mat-icon>
+              </span>
+
+              <mat-icon style="position: absolute;left: 0;top: 20px;">person</mat-icon>
+              <p class="taskmember">{{t.assignedto}}</p>
+
+              <span class="borderrighttask" *ngIf="t.priority === 'high'" style="background-color: red;"></span>
+              <span class="borderrighttask" *ngIf="t.priority === 'medium'" style="background-color: #ffbe0b;"></span>
+              <span class="borderrighttask" *ngIf="t.priority === 'low'" style="background-color: green;"></span>
+
+
+
+              <span class="taskheading">{{t.heading}}</span>
+              <p class="taskdescription">{{t.description}}</p>
+              <span class="taskdeadline">
+                <mat-icon style="transform: scale(0.7);margin-bottom: -7px;">hourglass_empty</mat-icon>{{t.deadline |
+                date: 'dd-MM-yyyy'}}
+              </span>
+
+              <div class="borderbottomtask" *ngIf="t.priority === 'high'" style=" background-color: red;"></div>
+              <div class="borderbottomtask" *ngIf="t.priority === 'medium'" style=" background-color: #ffbe0b"></div>
+              <div class="borderbottomtask" *ngIf="t.priority === 'low'" style="background-color: green;">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="addcolumnbtn" mat-raised-button matTooltip="Add Column" matTooltipPosition="right"
+        *ngIf="disableAddColumnBtn" (click)="openNewTaskFormDialogue(newColumnTemplate)">
+        <mat-icon style="transform: scale(2.0); ">add</mat-icon>
+      </button>
+
+
+
+      <select *ngIf="disableAddColumnBtn" class="changeBgcolorOfPage" [(ngModel)]="selectBgcolor"
+        matTooltip="Change background-color" matTooltipPosition="above">
+        <option *ngFor="let datas of data" [ngStyle]="{'background-color': datas.color}" [ngValue]="datas">
+          {{datas.name}}
+        </option>
+      </select>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Column Form  -->
+    <ng-template #newColumnTemplate>
+      <div>
+        <form [formGroup]="columnform">
+          <div class="form-outline mb-4">
+            <label>
+              <h2>Column Name</h2>
+            </label>
+            <input type="text" id="form1Example13" class="form-control form-control-lg" name="colName"
+              formControlName="colName" />
+          </div>
+          <button type="submit" class="addcolbtn btn btn-primary" (click)="insertNewColumn()"
+            [mat-dialog-close]="true"><i class="bi bi-plus"></i> Add</button>
+          <button class="addcolbtn btn btn-dark" [mat-dialog-close]="true"><i class="bi bi-x"></i> Cancel</button>
+        </form>
+      </div>
+    </ng-template>
+    <!--Column Form Ends-->
+
+
+
+
+
+    <!--Add Task Form-->
+    <ng-template #newTaskTemplate>
+      <div>
+        <form [formGroup]="taskform">
+          <div class="form-outline mb-4">
+            <label class="taskFormLabel">Task's Title</label>
+            <input type="text" id="form1Example13" class="form-control form-control-lg taskFormInput"
+              placeholder="Enter Task's heading" name="heading" formControlName="heading" />
+            <div *ngIf="f['heading']?.invalid && (f['heading']?.dirty || f['heading']?.touched)">
+              <div *ngIf="f['heading']?.getError?.('required')" style="color: red;">
+                *this field may not be blank
+              </div>
+            </div>
+            <label class="taskFormLabel">Description</label>
+            <input type="text" id="form1Example13" class="form-control form-control-lg taskFormInput"
+              placeholder="Enter description" name="description" formControlName="description" />
+            <div *ngIf="f['description']?.invalid && (f['description']?.dirty || f['description']?.touched)">
+              <div *ngIf="f['description']?.getError?.('required')" style="color: red;">
+                *this field may not be blank
+              </div>
+              <div *ngIf="f['description']?.getError?.('pattern')" style="color: red;">
+                <p> *only maximum 85 characters</p>
+              </div>
+            </div>
+
+            <label class="taskFormLabel">Choose deadline for task</label><br>
+            <input class=" taskFormInput" matInput [matDatepicker]="datepicker" formControlName="deadline"
+              style="width:60%;border-radius: 5px; height: 45px;">
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker><br>
+            <div *ngIf="f['deadline']?.invalid && (f['deadline']?.dirty || f['deadline']?.touched)">
+              <div *ngIf="f['deadline']?.getError?.('required')" style="color: red;">
+                *please provide a deadline for task
+              </div>
+            </div>
+
+            <label class="taskFormLabel">Priority</label>
+            <select class="form-control form-control-lg taskFormInput" name="priority" formControlName="priority">
+              <option value="" disabled selected>--- select your option ---</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <div *ngIf="f['priority']?.invalid && (f['priority']?.dirty || f['priority']?.touched)">
+              <div *ngIf="f['priority']?.getError?.('required')" style="color: red;">
+                *set priority for task
+              </div>
+            </div>
+
+            <label class="taskFormLabel">Assign Member</label>
+            <select class="form-control form-control-lg taskFormInput" name="assignedto" formControlName="assignedto">
+              <option value="" disabled selected>--- select your option ---</option>
+              <option *ngFor="let emailid of memberemail" [value]="emailid">{{emailid}}</option>
+            </select>
+            <div *ngIf="f['assignedto']?.invalid && (f['assignedto']?.dirty || f['assignedto']?.touched)">
+              <div *ngIf="f['assignedto']?.getError?.('required')" style="color: red;">
+                *please assign a person for task
+              </div>
+            </div>
+
+
+          </div>
+          <button type="submit" class="addtaskbtn btn btn-primary" (click)="insertNewTask()" [disabled]="this.taskform.invalid"
+            [mat-dialog-close]="true"><i class="bi bi-plus"></i> Add</button>
+          <button class="addtaskbtn btn btn-dark" [mat-dialog-close]="true"><i class="bi bi-x"></i> Cancel</button>
+        </form>
+      </div>
+    </ng-template>
+    <!--Add Task Form Ends-->
+
+
+
+    <!-- Update Task Form -->
+    <ng-template #updateTaskTemplate>
+      <div>
+        <form [formGroup]="updatetaskform">
+          <div class="form-outline mb-4">
+
+            <h1> Task's title :- <span style="text-transform: capitalize;font-weight:bold;">{{taskBody?.heading}}</span></h1>
+           
+            <label class="taskFormLabel">Description</label>
+            <input type="text" id="form1Example13" class="form-control form-control-lg taskFormInput"
+              placeholder="Enter description" name="description" formControlName="description"
+              value="{{taskBody?.description}}" [value]="taskBody?.description" />
+            <div
+              *ngIf="updateControls['description']?.invalid && (updateControls['description']?.dirty || updateControls['description']?.touched)">
+              <div *ngIf="updateControls['description']?.getError?.('required')" style="color: red;">
+                *this field may not be blank
+              </div>
+              <div *ngIf="updateControls['description']?.getError?.('pattern')" style="color: red;">
+                <p> *only maximum 85 characters</p>
+              </div>
+            </div>
+
+            <label class="taskFormLabel">Choose deadline for task</label><br>
+            <input class=" taskFormInput" matInput [matDatepicker]="datepicker" formControlName="deadline"
+              style="width:60%;border-radius: 5px; height: 45px;" value="{{taskBody?.deadline}}"
+              [value]="taskBody?.deadline">
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker><br>
+            <div
+              *ngIf="updateControls['deadline']?.invalid && (updateControls['deadline']?.dirty || updateControls['deadline']?.touched)">
+              <div *ngIf="updateControls['deadline']?.getError?.('required')" style="color: red;">
+                *please provide a deadline for task
+              </div>
+            </div>
+
+            <label class="taskFormLabel">Priority</label>
+            <select class="form-control form-control-lg taskFormInput" name="priority" formControlName="priority">
+              <option value="" disabled selected>--- select your option ---</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <div
+              *ngIf="updateControls['priority']?.invalid && (updateControls['priority']?.dirty || updateControls['priority']?.touched)">
+              <div *ngIf="updateControls['priority']?.getError?.('required')" style="color: red;">
+                *set priority for task
+              </div>
+            </div>
+
+            <label class="taskFormLabel">Assign Member</label>
+            <select class="form-control form-control-lg taskFormInput" name="assignedto" formControlName="assignedto">
+              <option value="" disabled selected>--- select your option ---</option>
+              <option *ngFor="let emailid of memberemail" [value]="emailid">{{emailid}}</option>
+            </select>
+            <div
+              *ngIf="updateControls['assignedto']?.invalid && (updateControls['assignedto']?.dirty || updateControls['assignedto']?.touched)">
+              <div *ngIf="updateControls['assignedto']?.getError?.('required')" style="color: red;">
+                *please assign a person for task
+              </div>
+            </div>
+
+
+          </div>
+          <button type="submit" class="addtaskbtn btn btn-primary" [disabled]="this.updatetaskform.invalid" [mat-dialog-close]="true"
+            (click)="editExistingTask()">Update</button>
+          <button class="addtaskbtn btn btn-dark" [mat-dialog-close]="true"><i class="bi bi-x"></i> Cancel</button>
+        </form>
+      </div>
+    </ng-template>
+    <!-- Update Task Form Ends -->
+
+
+
+
+    <!--Add New Project Form-->
+    <ng-template #newProjectTemplate>
+      <div class="row">
+
+        <div class="col">
+          <span class="newProjectFormHeading">Create New Board</span><br><br>
+          <form [formGroup]="reactform">
+
+            <label class="newProjectFormLabel">Board Name :-</label><br>
+            <mat-form-field appearance="outline">
+              <mat-label>Enter board name</mat-label>
+              <input matInput placeholder="pat@example.com" required formControlName="projectname">
+            </mat-form-field>
+            <div *ngIf="pname?.invalid && (pname?.dirty || pname?.touched)">
+              <div *ngIf="pname?.getError?.('required')" style="color: red;">
+                *provide a name for the board
+              </div>
+            </div>
+            <br>
+
+            <label class="newProjectFormLabel">Member Details :-</label>
+            <table formArrayName="members">
+              <tbody>
+                <tr *ngFor="let item of members.controls;let i=index" [formGroupName]="i">
+                  <td>
+                    <mat-form-field appearance="outline"  formControlName="emailid">
+                      <mat-label>Member's Email</mat-label>
+                      <mat-select>
+                        <mat-option *ngFor="let emails of user" [value]="emails">{{emails}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td><button class="btn btn-light" (click)="Addnewrow()" style="margin-left: 10px;margin-top:-20px"
+                      matTooltip="add member" matTooltipPosition="above">
+                      <mat-icon>add</mat-icon>
+                    </button></td>
+                  <td><button class="btn btn-light" (click)="Removeitem(i)" style="margin-left: 10px;margin-top:-20px"
+                      matTooltip="remove member" matTooltipPosition="right">
+                      <mat-icon>delete</mat-icon>
+                    </button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <label class="newProjectFormLabel">Add Columns in Board :-</label>
+            <table formArrayName="columnList">
+              <tbody>
+                <tr *ngFor="let columnitems of columnList.controls;let i=index" [formGroupName]="i">
+                  <td><input class="memailformfield form-control addNewProjectFormInput" placeholder="Column's Name"
+                      formControlName="colName">
+                  </td>
+                  <td><button class="btn btn-light" (click)="Addnewcolrow()" style="margin-left: 10px;margin-top:-10px"
+                      matTooltip="add column" matTooltipPosition="below">
+                      <mat-icon>add</mat-icon>
+                    </button></td>
+                  <td><button class="btn btn-light" *ngIf="i!=0" (click)="Removecolitem(i)" matTooltip="remove column"
+                      matTooltipPosition="right" style="margin-left: 10px;margin-top:-10px">
+                      <mat-icon>delete</mat-icon>
+                    </button></td>
+                </tr>
+                <!-- <label *ngIf="columnList.get('colName').errors?.['required']"></label> -->
+              </tbody>
+            </table><br><br>
+            <button class="btn btn-success" [mat-dialog-close]="true" (click)="ProceedSave()"
+              [disabled]="this.reactform.invalid" (click)="drawer.toggle()">Add Board</button>
+            <button class="btn btn-dark" style="margin-left: 20px;" [mat-dialog-close]="true"
+              (click)="drawer.toggle()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+
+    </ng-template>
+    <!--Add New Project Form Ends-->
+
+
+
+   
+
+
+
+
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

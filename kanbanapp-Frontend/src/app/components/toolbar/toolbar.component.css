@@ -1,0 +1,258 @@
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+.changeBgcolorOfPage{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height:30px;
+}
+
+
+
+.fplayout{
+  background-color:rgba(163,85,88,255); height: 80%;
+
+}
+.fpPara{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.fpbtn{
+  width: 20%;
+  font-family: Arial;
+  font-weight: bold;
+  color: rgba(163,85,88,255);
+}
+
+.aligningColumn{
+  display: flex; justify-content: center; flex-direction: row;
+}
+
+.columndisplay{
+  float: left;
+  margin-left: 20px;
+  padding: 0 10px;
+  max-width: 233px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+}
+
+.columndisplay>h1{
+  text-align: left;
+  text-transform: uppercase;
+  background-color: white;
+  margin-top: 10px;
+  padding-left: 5px;
+  max-width: 215px;
+  border: 2px solid wheat;
+  font-family: Rockwell;
+}
+
+.tasklist{
+  padding: 10px;
+  margin-bottom: 15px;
+ text-align: left;
+  max-width: 230px;
+}
+
+.row {margin: 0 -5px;}
+
+.card-body{
+  max-width: 170px;
+  min-height: 180px;
+} 
+
+.borderrighttask{
+  width: 6px;
+  height: 120px;
+  position: absolute;
+  right: 0;
+  top: 30px;
+}
+
+.borderbottomtask{
+  width: 140px;
+  height: 6px;
+  position: absolute;
+  bottom: 0;
+}
+
+.card{
+  max-width: 170px;
+  min-height: 200px;
+}
+
+.taskheading{
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: large;
+  position: absolute;
+  left: 10px;
+  top: 70px;
+}
+.taskdescription{
+  font-size: 10px;
+  position: absolute;
+  left: 20px;
+  top: 90px;
+  /* max-width: 150px;
+  word-wrap: break-word; */
+}
+.taskmember{
+  float: left;
+  margin-left:13px;
+   margin-top: 8px; 
+  color: #000000;
+  font-size: 12px;
+  max-width:130px;
+  word-wrap:break-word;
+}
+.taskdeadline{
+  position: absolute;
+  bottom: 10px;
+  left: 2px;
+  text-transform: capitalize;
+}
+.taskpriority{
+  float:left;
+  margin-top: 10px;
+  color: white;
+  padding: 2px 5px;
+  text-transform: capitalize;
+  margin-left:-10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.addcolumnbtn{
+  max-width: 50px;
+  max-height: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+
+
+.addcolbtn{
+  margin-left: 20px;
+}
+
+.addtaskbtn{
+  margin-left: 20px;
+}
+.taskFormLabel{
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+
+.taskFormInput{
+  margin-bottom: 15px;
+}
+
+
+.newProjectFormLabel{
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.newProjectFormHeading{
+  font-size: 35px;
+}
+
+.mailtext{
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 200px;
+}
+
+.mailicons{
+  position: relative;
+  top: 20px;
+  left: 190px;
+  color: black;
+}
+
+.fbtext{
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 460px;
+}
+
+.fbicons{
+  position: relative;
+  top: 20px;
+  left: 450px;
+  color: black;
+}
+
+.yttext{
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 840px;
+}
+
+.yticons{
+  position: relative;
+  top: 20px;
+  left: 832px;
+  color: black;
+}
+
+.copyrightcls{
+  color: black;
+  font-size: 20px;
+  position: relative;
+  top: 50px;
+  left: -20px;
+}
+
+.myclass{
+  width: 400px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .columndisplay {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  } 
+}
+
+
+

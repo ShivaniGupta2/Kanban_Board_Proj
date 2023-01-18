@@ -1,0 +1,66 @@
+<section class="vh-80">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src=".\assets\login.png" class="img-fluid" alt="Loginlogo" style="height: 100%;">
+            </div>
+
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <button mat-button class="close-icon closebtn" [mat-dialog-close]="true">
+                    <mat-icon>close</mat-icon>
+                </button>
+
+                <form [formGroup]="loginForm" (ngSubmit)="loginMethod()">
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form1Example13">Email address</label>
+                        <input type="emailid" id="form1Example13" class="form-control form-control-lg"
+                            formControlName="emailid" type="text" placeholder="Enter Email Address" name="emailid"
+                            required />
+
+                        <div *ngIf="f['emailid']?.invalid && (f['emailid']?.dirty || f['emailid']?.touched)">
+                            <div *ngIf="f['emailid']?.getError?.('required')" style="color: red;">
+                                *Email is required
+                            </div>
+                            <div *ngIf="f['emailid']?.getError?.('pattern')" style="color: red;">
+                                <p> *invalid Email Address</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form1Example23">Password</label>
+                        <input type="password" id="form1Example23" class="form-control form-control-lg"
+                            formControlName="password" type="password" placeholder="Enter Password" name="password"
+                            required />
+
+                        <div *ngIf="f['password']?.invalid && (f['password']?.dirty || f['password']?.touched)">
+                            <div *ngIf="f['password']?.getError?.('required')" style="color: red;">
+                                *Password is required
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                        <a style="text-decoration: none;margin-left: 30px;"
+                            (click)="openForgotPasswordDialog('300ms','500ms')" [mat-dialog-close]="true">Forgot
+                            password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="loginForm.invalid"
+                        [mat-dialog-close]="true">Sign
+                        in</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

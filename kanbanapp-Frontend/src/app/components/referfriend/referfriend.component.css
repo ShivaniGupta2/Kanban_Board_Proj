@@ -1,0 +1,92 @@
+.headerimg {
+    margin: 30px 150px;
+    width: 60%;
+}
+
+.headerh1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+    margin-top: 80px;
+    font-family: Comic Sans MS;
+}
+
+.headerh2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+    margin-top: 25px;
+    font-family: Comic Sans MS;
+}
+
+.headerp {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.secondrow{
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid grey;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    color: #333333;
+    font-family: Monospace, Monaco;
+}
+
+
+.thirdrowp{
+    text-align: center;
+    color: #333333;
+    font-size: 18px;
+}
+
+.thirdrowimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+form{  
+    background-color: #eeeeee;
+}
+
+input{
+    width:80%;
+    margin-left: 10%;
+}
+
+.formlabel{
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    font-size: 18px;
+    color: #918f8f;
+}
+.submitbtn{
+   background-color: #6bb561;
+    width: 50%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer{
+    height: 150px;
+    background-color: #eeeeee;
+}
+.footerh1{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-family: Monospace, Monaco;
+}
+
+
+.footerp{
+    text-align: center;
+    font-size: large;
+    margin-bottom: -10px;
+}
